@@ -8,9 +8,9 @@ import ItemRoute from './ItemRoute';
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/" component={CatalogRoute} />
+      <Route exact path='/' component={CatalogRoute} />
 
-      <Route exact path="/item" component={ItemRoute} />
+      <Route exact path='/:name' component={ItemRoute} />
     </Switch>
   );
 };

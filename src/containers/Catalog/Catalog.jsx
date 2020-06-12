@@ -10,7 +10,7 @@ const Catalog = ({ data, isLoading }) => (
         ? (<Loading text="Carregando..." />)
         : (
           <div className="categories__content">
-            {data.length && data.map(product, index => (
+            {data.length && data.map((product, index) => (
               <CatalogItem
                 image={product.image}
                 name={product.name}

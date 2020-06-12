@@ -7,8 +7,7 @@ import Routes from '../../routes';  // index
 
 import { store, persistor } from '../../store';
 
-import {Topbar, Cart} from '../containers';
-import Routes from '../../routes';
+import { Topbar, Cart } from '../../containers';
 
 //import './App.scss';
 

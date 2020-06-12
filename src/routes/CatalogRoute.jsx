@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-//import {} from '../actions';
+import { getItems } from '../actions/actions';
 
 import { Catalog } from '../containers';
 
@@ -11,12 +11,13 @@ const CatalogRoute = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch('https://5e7d0266a917d70016684219.mockapi.io/api/v1/users?page=1&limit=10') 
+    fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog') 
       .then((res) => res.json())
       .then(data => dispatch(getItems(data)));
     setIsLoading(false)
   }, [dispatch]); 
 
+  console.log(content[0])
   return (
       <Catalog
         isLoading={isLoading}
