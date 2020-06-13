@@ -11,7 +11,7 @@ const rootReducer = (state, action) => {
 const persistConfig = {
   key: 'fashionista',
   storage,
-  whitelist: ['cart'], // para não "guardar" content
+  whitelist: ['cart','data'], // para não "guardar" content
 }
 
 // enhanced reducer - redux-persist

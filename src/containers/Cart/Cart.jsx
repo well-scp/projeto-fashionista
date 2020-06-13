@@ -18,10 +18,18 @@ const Cart = () => {
 
     return (
         <div className={`cart ${cartStatus ? 'cart--is-visible' : ''}`}>
-            <Link to='' onClick={handleClick}>
-                <GiReturnArrow />
-            </Link>
-            sacola, items, subtotal
+            <header className='cart__header'> 
+                <Link to='' onClick={handleClick}>
+                    <GiReturnArrow />
+                </Link>
+                <p>Sacola</p>
+            </header>
+
+            <p>items</p>
+            
+            <footer className="cart__footer">
+                <p>Subtotal</p>
+            </footer>
         </div>
     ) 
 };

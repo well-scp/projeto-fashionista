@@ -16,10 +16,14 @@ export default (state = initialState, { type, payload }) => {
       };
 
     case GET_ITEMS:
+      payload.map((product, index) => {
+        product.id = index;
+      });
+      const dados = payload.slice()
       return {
         ...state,
-        content: payload,
-        data: payload
+        data: dados,
+        content: dados,
       };
 
     case FIND_ITEMS:

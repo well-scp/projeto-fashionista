@@ -17,7 +17,6 @@ const CatalogRoute = () => {
     setIsLoading(false)
   }, [dispatch]); 
 
-  console.log(content[0])
   return (
       <Catalog
         isLoading={isLoading}

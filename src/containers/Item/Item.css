@@ -1,0 +1,55 @@
+@media screen and (min-width: 768px) {
+    .item .container{
+        display: flex;
+    }
+    .item__footer{
+        margin: 5px;
+    }
+}
+
+.item__img {
+    max-width: 478px;
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+}
+
+.item__price {
+    display: inline-flex;
+    align-items: baseline;
+    font-weight: bold;
+}
+
+.item__price__old, .item__price__current, .item__price h4 {
+    margin: 5px;
+}
+
+.item__price__old {
+    text-decoration: line-through;
+    color: rgb(163, 163, 163) ;
+}
+
+.item__price__current {
+    font-size: 1.8rem;
+    font-family: monospace;
+}
+
+.item__name {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.item__name__discount {
+    font-size: 1.5rem;
+    background-color: #212529;
+    color: #fff;
+    margin-left: 6px;
+    padding: 0 4px;
+}
+

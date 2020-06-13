@@ -1,0 +1,7 @@
+.catalog__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -.25rem;
+    margin-right: -.25rem;
+}
