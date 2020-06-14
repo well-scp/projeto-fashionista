@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getItems } from '../actions/actions';
+import { getItems, addSize } from '../actions/actions';
 
 import { Catalog } from '../containers';
 
@@ -15,6 +15,7 @@ const CatalogRoute = () => {
       .then((res) => res.json())
       .then(data => dispatch(getItems(data)));
     setIsLoading(false)
+    dispatch(addSize(''))
   }, [dispatch]); 
 
   return (

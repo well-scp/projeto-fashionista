@@ -14,7 +14,7 @@ import { Topbar, Cart } from '../../containers';
 const App = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <div className="app" data-testid="app">
+      <div className="app">
         <Router>
           <Topbar />
         

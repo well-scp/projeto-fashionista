@@ -23,7 +23,7 @@ const Topbar = () => {
 
                 <SearchInput />
 
-                <Link to='' onClick={handleClick}>
+                <Link onClick={handleClick}>
                     <FaShoppingBag className="topbar__icon"/>
 
                     <Counter />

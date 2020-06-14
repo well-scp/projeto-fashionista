@@ -1,0 +1,19 @@
+button {
+    text-decoration: line-through;
+    border-width: 1px;
+    border-color: #a3a3a3;
+    border-radius: 8px;
+    border-style: solid;
+    margin: 5px 2px 2px;
+    font-weight: bold;
+}
+
+.item__button {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item__button.item__button--selected {
+    background-color: #212529;
+    color: #e5e5e5;
+}

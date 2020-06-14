@@ -1,10 +1,12 @@
-import {GET_ITEMS, FIND_ITEMS, OPEN_CART} from '../actions/actionsType';
+import {GET_ITEMS, FIND_ITEMS, OPEN_CART, ADD_SIZE, ADD_TO_BAG} from '../actions/actionsType';
 
 const initialState = {
   content: [],
   data: [],
   cartStatus: false,
   inputField: '',
+  sizeSelected: '',
+  bag: [],
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -16,10 +18,11 @@ export default (state = initialState, { type, payload }) => {
       };
 
     case GET_ITEMS:
-      payload.map((product, index) => {
+      const dados = payload.map((product, index) => {
         product.id = index;
+        return product
       });
-      const dados = payload.slice()
+
       return {
         ...state,
         data: dados,
@@ -27,25 +30,45 @@ export default (state = initialState, { type, payload }) => {
       };
 
     case FIND_ITEMS:
-      if (payload !== ""){
-        return {
-          ...state,
-          inputField: payload,
-          content: state.data.filter((product)=>{
-            if(product.name.toLowerCase().includes(payload) && payload !== ''){
-              console.log('if')
-              return product
-            } 
-            return ""
-          })
-        }
-      } else {
-        return {
-          ...state,
-          inputField: payload,
-          content: state.data,
-        }
+      const dadosFiltered = state.data.filter((product)=>{
+        if(product.name.toLowerCase().includes(payload) && payload !== ''){
+          return product
+        } 
+        return ""
+      })
+      
+      return {
+        ...state,
+        inputField: payload,
+        content: payload? dadosFiltered : state.data,
       }
+
+      case ADD_SIZE:
+        return {
+          ...state,
+          sizeSelected: payload,
+        }
+
+      case ADD_TO_BAG:
+        const prod = state.bag.map((item) => {
+          console.log(item.size, payload.size)
+          if (item.id === payload.id && item.size === payload.size) {
+            item.count +=1
+            return item
+          } else { 
+            return item 
+          }
+        })
+        
+
+        const prodFind = state.bag.find((item) => item.id === payload.id && item.size === payload.size)
+        console.log(prodFind)
+        if (prodFind === undefined) {payload.count=1}
+
+        return {
+          ...state,
+          bag: prodFind? prod : [...state.bag, payload],
+        }
       
     default:
       return state

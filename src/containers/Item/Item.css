@@ -7,14 +7,23 @@
     }
 }
 
-.item__img {
-    max-width: 478px;
-    width: 100%;
+span {
+    color: maroon;
+    font-size: small;
+}
+
+.item .container{
+    width: auto;
 }
 
 .item {
     display: flex;
     flex-direction: column;
+}
+
+.item__img {
+    max-width: 478px;
+    width: 100%;
 }
 
 .item__price {
@@ -53,3 +62,19 @@
     padding: 0 4px;
 }
 
+.item__bag {
+    width: 100%;
+    background-color: #212529;
+    color: #e5e5e5;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 6px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.item__size {
+    font-size: small;
+    margin: 7px 0;
+}

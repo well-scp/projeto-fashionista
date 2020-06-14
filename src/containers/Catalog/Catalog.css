@@ -1,3 +1,11 @@
+@media screen and (min-width: 992px){
+    .catalog {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+
 .catalog__content {
     display: flex;
     flex-wrap: wrap;
